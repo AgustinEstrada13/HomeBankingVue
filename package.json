@@ -1,0 +1,29 @@
+{
+  "name": "appvue",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "animate.css": "^4.1.1",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.1",
+    "core-js": "^3.6.5",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.0.18",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "jquery": "^3.6.0"
+  }
+}
