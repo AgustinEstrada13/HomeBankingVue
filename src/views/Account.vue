@@ -1,9 +1,9 @@
 <template>
     <Header />
     <NavBar/>
-    <main>
+
       <MainAccount/>
-    </main>
+
 
 </template>
 
@@ -25,7 +25,7 @@ import MainAccount from "@/components/MainAccount.vue"
 </script>
 
 
-<style scoped>
+<style >
   
 </style>
 

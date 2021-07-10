@@ -12,6 +12,9 @@
           <div class ="nav_link">
             <router-link to="/Card"><i class="far fa-credit-card"></i> Cards</router-link>
           </div>  
+          <div class ="nav_link">
+            <router-link to="/Buy"><i class="fas fa-coins"></i> Buy</router-link>
+          </div>  
 
       </div>
   </nav>
@@ -45,9 +48,9 @@ nav{
         border-radius: 20px;
         background-color: black;
         border: 1px solid rgb(52,152,219);
+
   }
   .nav_link{
-    width: 35%;
-    
+    width: 35%; 
   }
 </style>

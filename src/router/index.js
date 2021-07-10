@@ -6,6 +6,7 @@ import Transaction from '../views/Transaction.vue'
 import Card from '../views/Card.vue'
 import Register from '../views/Register.vue'
 import Loan from '../views/Loan.vue'
+import Buy from '../views/Buy.vue'
 const routes = [
   {
     path: '/Home',
@@ -41,6 +42,11 @@ const routes = [
     path: '/Card',
     name: 'Card',
     component: Card
+  },
+  {
+    path: '/Buy',
+    name: 'Buy',
+    component: Buy
   },
   {
     path: '/',

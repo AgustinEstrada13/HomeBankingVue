@@ -87,7 +87,7 @@
     
     <div class="contentCard">
         
-        <div  class="card mt-4" v-for="card in cards" :key="card.id" > 
+        <div  class="card mt-4" v-for="card in cards.sort()" :key="card.id" > 
             <div :class="card.colorCard" class="card__front card__part">
 
                 <div class="d-flex justify-content-around">
@@ -105,7 +105,8 @@
                     <p class="card__info">{{card.fromDate.slice(2,7)}}</p>
                 </div>
                 <div class="card__space-25">
-                    <span class="card__label">Expires</span>
+                    <span v-show="card.expiredCard == false" class="card__label">Expires</span>
+                    <span v-show="card.expiredCard == true" class="card__label text-danger">Expired</span>
                     <p class="card__info">{{card.thruDate.slice(2,7)}}</p>
                 </div>
                 
@@ -146,6 +147,7 @@ export default {
             this.user = res.data
             this.cards = this.user.cards;
             this.nameUser = this.user.firstName + " " + this.user.lastName
+            console.log(this.cards)
 
             //RECUPERAR LA CANTIDAD DEL TIPO DE TARJETA
             this.cards.forEach(x=>{
@@ -242,7 +244,7 @@ export default {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        padding: 10px;
+        padding: 20px;
     }
     .titleCard h2{
         color: white;

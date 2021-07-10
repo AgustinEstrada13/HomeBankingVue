@@ -2,7 +2,7 @@
     <main>
         
         <div class="Account" >
-            <div class="contentInfoAccount w-100">
+            <div class="contentInfoAccount">
 
                 <div class="w-25 mb-5">
                     <h2 v-show="sizeAccount > 1">You have {{this.sizeAccount}} accounts &nbsp; &nbsp; &nbsp; You can create {{this.sizeMaxAccount - this.sizeAccount}} account &nbsp; &nbsp; &nbsp; <i class="fab fa-btc"></i> = $40.000 &nbsp; &nbsp; &nbsp; <i class="fab fa-ethereum"></i> = $2,320.94</h2>
@@ -21,7 +21,6 @@
                 <h2>Your available accounts.<span>&#160;</span></h2>
             </div>
             </div>
-
             <div class="newAccount w-100 d-flex justify-content-center ">
                 <div class="contentNewAccount">
                 <div class="infoNewAccount">
@@ -52,11 +51,7 @@
                     </div>                    
                 </div>
             </div>
-
-            </div>
-
-        
-            
+            </div>    
             <div class="accountUser w-100">
                 <div class="contentAccount mt-5"  v-for="cuenta in accounts" :key="cuenta.id">
                 <div class="sectionLeft">
@@ -69,8 +64,9 @@
                     <div class="buttonCard">
                      <router-link  to="/Loan">   <button @click="findIndex(cuenta)" type="button" class="btn btn-outline-danger btnAccount ">Loans</button></router-link>
                     </div>
-                    <div class="buttonCard">
+                    <div class="buttonCard d-flex justify-content-around ">
                         <!-- Button trigger modal -->
+                    <button  type="button" @click="findIndex(cuenta)" class="btn btn-outline-warning" >Delete account</button>
                     <button  type="button" @click="findIndex(cuenta)" class="btn btn-outline-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">Transfer to</button>
                     <!-- Modal --> 
                     <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
@@ -127,9 +123,7 @@
                     </div>
                     </div>
                 </div>
-
-
-                <!-- ----------------------------------------------->
+                <!------------------------------------------------->
                     </div>
                 <div class="sectionCenter">
                     <div class="contentCenter">
@@ -155,7 +149,7 @@
                 <h3 class="fs-1">YOUR LOANS REQUESTED FROM THE BANK</h3>
             </div>
 
-            <div v-if="size>0" class="contentTableLoans container d-flex">
+            <div v-if="size>0" class="contentTableLoans w-100">
                 
                 <table class="table table-responsive mt-5" >
                     <thead>
@@ -171,7 +165,7 @@
                             <td>{{transaction.clientLoanId}}</td>
                             <td>$ {{transaction.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}</td>
                             <td>{{transaction.payment}}</td>
-                            <td :class="transaction.name == 'Mortgage'?'text-danger':'text-warning'">{{transaction.name}}</td>
+                            <td :class="transaction.name == 'Mortgage'?'text-primary':'text-warning'">{{transaction.name}}</td>
                             
                         </tr>
                     </tbody>
@@ -269,6 +263,7 @@ export default {
 
 main{
     min-height: 100vh;
+
     background: linear-gradient(to right, rgb(41, 27, 27), rgb(25, 33, 42));
 }
 .infoPage{
@@ -278,7 +273,7 @@ main{
 }
 .contentInfoPage{
     height: 100%;
-    width: 70%;
+    width: 7vw;
 }
 .contentInfoPage h2{
     position: relative; 
@@ -301,13 +296,14 @@ main{
 
 .Account{
     min-height: 40vh;
+    max-width: 100vw;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 .contentInfoAccount{
     height: 8vh;
-    min-width: 25%;
+    width: 100vw!important;
     background-color: rgb(25,25,25);
     font-size: 1rem;
     color: aliceblue;

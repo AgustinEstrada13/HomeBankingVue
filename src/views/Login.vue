@@ -7,11 +7,12 @@
                 <form @submit="sumbit()" class="box">
                     <h1 class="animate__animated animate__fadeInDown">Login</h1>
                     <p class="text-muted"> Please enter your login and password!</p> 
-                    <input v-model="mail" type="text" name="" placeholder="Username" aria-label="LoginUserEmail" aria-describedby="basic-addon1"> 
-                    <input v-model="pass" type="password" name="" placeholder="Password" aria-label="LoginUserPassword" aria-describedby="basic-addon1"> 
+                    <input v-model="mail" type="text" name="" placeholder="Username" > 
+                    <input v-model="pass" type="password" name="" placeholder="Password"> 
 
                     <a class="forgot text-muted" href="#">Forgot password?</a> 
-                    <router-link to="/register"><a class="forgot text-muted" href="#">Register</a></router-link> 
+                    <transition><router-link to="/register"><a class="forgot text-muted" href="#">Register</a></router-link> </transition> 
+                    
                     <input @Click="SaveSession()" type="submit" name="" value="Login" href="#" >
                     <div v-if="loading" class="spinner-border spinner-border-sm"></div>
                     <div class="col-md-12">
@@ -88,7 +89,12 @@ export default {
 </script>
 
 <style scoped>
-
+.fade-leave-active{
+    transition: opacity .5s;
+}
+.fade-leave-to{
+    transition: opacity 0;
+}
 .wrapper{
     height: 100vh;
     display: flex;
